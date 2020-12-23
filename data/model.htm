@@ -1,0 +1,942 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0091)http://seats.lib.ecnu.edu.cn/web/seat3?area=40&segment=1403094&=2020-12-23&=13:09:12&=22:00 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+    <title>华东师范大学图书馆座位管理系统</title>
+    <!-- Bootstrap -->
+    <link href="./华东师范大学图书馆座位管理系统_files/bootstrap.min.css" rel="stylesheet">
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" type="text/css" href="/Public/newweb/Content/vendors/bootstrap/dist/css/bootstrap-ie6.css">
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" type="text/css" href="/Public/newweb/Content/vendors/bootstrap/dist/css/ie.css">
+    <![endif]-->
+    <!-- Font Awesome -->
+    <link href="./华东师范大学图书馆座位管理系统_files/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="./华东师范大学图书馆座位管理系统_files/custom.min.css" rel="stylesheet">
+    <link href="./华东师范大学图书馆座位管理系统_files/style.css" rel="stylesheet" type="text/css">
+    <link href="./华东师范大学图书馆座位管理系统_files/web.css" rel="stylesheet">
+    <link href="./华东师范大学图书馆座位管理系统_files/common.css" rel="stylesheet" type="text/css">
+    <!--jquery-->
+    <script src="./华东师范大学图书馆座位管理系统_files/jquery.min.js"></script><style type="text/css" abt="234"></style>
+    <!-- Bootstrap -->
+    <script src="./华东师范大学图书馆座位管理系统_files/bootstrap.min.js"></script>
+    <!--框架样式-->
+    <link href="./华东师范大学图书馆座位管理系统_files/frame.css" rel="stylesheet" type="text/css">
+    <!--固定顶部-->
+    <script src="./华东师范大学图书馆座位管理系统_files/stickUp.min.js"></script>
+    
+    <!-- 自定义js -->
+    <script src="./华东师范大学图书馆座位管理系统_files/common.js"></script>
+    <link href="./华东师范大学图书馆座位管理系统_files/globe.css" rel="stylesheet" type="text/css">
+    <!-- 弹窗 -->
+    <link href="./华东师范大学图书馆座位管理系统_files/ui-dialog.css" rel="stylesheet">
+    <link href="./华东师范大学图书馆座位管理系统_files/web-green-dialog.css" rel="stylesheet">
+    <script src="./华东师范大学图书馆座位管理系统_files/dialog.js"></script><style type="text/css">.ui-dialog{*zoom:1;_float:left;position:relative;background-color:#fff;border:1px solid #999;border-radius:6px;outline:0;background-clip:padding-box;font-family:Helvetica,arial,sans-serif;font-size:14px;line-height:1.428571429;color:#333;opacity:0;-webkit-transform:scale(0);transform:scale(0);-webkit-transition:-webkit-transform .15s ease-in-out,opacity .15s ease-in-out;transition:transform .15s ease-in-out,opacity .15s ease-in-out}.ui-popup-show .ui-dialog{opacity:1;-webkit-transform:scale(1);transform:scale(1)}.ui-popup-focus .ui-dialog{box-shadow:0 0 8px rgba(0,0,0,.1)}.ui-popup-modal .ui-dialog{box-shadow:0 0 8px rgba(0,0,0,.1),0 0 256px hsla(0,0%,100%,.3)}.ui-dialog-grid{width:auto;margin:0;border:0 none;border-collapse:collapse;border-spacing:0;background:transparent}.ui-dialog-body,.ui-dialog-footer,.ui-dialog-header{padding:0;border:0 none;text-align:left;background:transparent}.ui-dialog-header{white-space:nowrap;border-bottom:1px solid #e5e5e5}.ui-dialog-close{position:relative;_position:absolute;float:right;top:13px;right:13px;_height:26px;padding:0 4px;font-size:21px;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;opacity:.2;filter:alpha(opacity=20);cursor:pointer;background:transparent;_background:#fff;border:0;-webkit-appearance:none}.ui-dialog-close:focus,.ui-dialog-close:hover{color:#000;text-decoration:none;cursor:pointer;outline:0;opacity:.5;filter:alpha(opacity=50)}.ui-dialog-title{margin:0;line-height:1.428571429;min-height:16.428571429px;padding:15px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-weight:700;cursor:default}.ui-dialog-body{padding:20px;text-align:center}.ui-dialog-content{display:inline-block;position:relative;vertical-align:middle;*zoom:1;*display:inline;text-align:left}.ui-dialog-footer{padding:0 20px 20px}.ui-dialog-statusbar{float:left;margin-right:20px;padding:6px 0;line-height:1.428571429;font-size:14px;color:#888;white-space:nowrap}.ui-dialog-statusbar label:hover{color:#333}.ui-dialog-statusbar .label,.ui-dialog-statusbar input{vertical-align:middle}.ui-dialog-button{float:right;white-space:nowrap}.ui-dialog-footer button,.ui-dialog-footer button+button{margin-bottom:0;margin-left:5px}.ui-dialog-footer button{width:auto;overflow:visible;display:inline-block;padding:6px 12px;font-size:14px;font-weight:400;line-height:1.428571429;text-align:center;white-space:nowrap;vertical-align:middle;cursor:pointer;background-image:none;border:1px solid transparent;border-radius:4px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none}.ui-dialog-footer button:focus{outline:thin dotted #333;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}.ui-dialog-footer button:focus,.ui-dialog-footer button:hover{color:#333;text-decoration:none}.ui-dialog-footer button:active{outline:0;-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.ui-dialog-footer button[disabled]{pointer-events:none;cursor:not-allowed;opacity:.65;filter:alpha(opacity=65);-webkit-box-shadow:none;box-shadow:none}.ui-dialog-footer button{color:#333;background-color:#fff;border-color:#ccc}.ui-dialog-footer button:active,.ui-dialog-footer button:focus,.ui-dialog-footer button:hover{color:#333;background-color:#ebebeb;border-color:#adadad}.ui-dialog-footer button:active{background-image:none}.ui-dialog-footer button[disabled],.ui-dialog-footer button[disabled]:active,.ui-dialog-footer button[disabled]:focus,.ui-dialog-footer button[disabled]:hover{background-color:#fff;border-color:#ccc}.ui-dialog-footer button.ui-dialog-autofocus{color:#fff;background-color:#428bca;border-color:#357ebd}.ui-dialog-footer button.ui-dialog-autofocus:active,.ui-dialog-footer button.ui-dialog-autofocus:focus,.ui-dialog-footer button.ui-dialog-autofocus:hover{color:#fff;background-color:#3276b1;border-color:#285e8e}.ui-dialog-footer button.ui-dialog-autofocus:active{background-image:none}.ui-popup-top-left .ui-dialog,.ui-popup-top-right .ui-dialog,.ui-popup-top .ui-dialog{top:-8px}.ui-popup-bottom-left .ui-dialog,.ui-popup-bottom-right .ui-dialog,.ui-popup-bottom .ui-dialog{top:8px}.ui-popup-left-bottom .ui-dialog,.ui-popup-left-top .ui-dialog,.ui-popup-left .ui-dialog{left:-8px}.ui-popup-right-bottom .ui-dialog,.ui-popup-right-top .ui-dialog,.ui-popup-right .ui-dialog{left:8px}.ui-dialog-arrow-a,.ui-dialog-arrow-b{position:absolute;display:none;width:0;height:0;overflow:hidden;_color:#ff3fff;_filter:chroma(color=#FF3FFF);border:8px dashed transparent}.ui-popup-follow .ui-dialog-arrow-a,.ui-popup-follow .ui-dialog-arrow-b{display:block}.ui-popup-top-left .ui-dialog-arrow-a,.ui-popup-top-right .ui-dialog-arrow-a,.ui-popup-top .ui-dialog-arrow-a{bottom:-16px;border-top:8px solid #7c7c7c}.ui-popup-top-left .ui-dialog-arrow-b,.ui-popup-top-right .ui-dialog-arrow-b,.ui-popup-top .ui-dialog-arrow-b{bottom:-15px;border-top:8px solid #fff}.ui-popup-top-left .ui-dialog-arrow-a,.ui-popup-top-left .ui-dialog-arrow-b{left:15px}.ui-popup-top .ui-dialog-arrow-a,.ui-popup-top .ui-dialog-arrow-b{left:50%;margin-left:-8px}.ui-popup-top-right .ui-dialog-arrow-a,.ui-popup-top-right .ui-dialog-arrow-b{right:15px}.ui-popup-bottom-left .ui-dialog-arrow-a,.ui-popup-bottom-right .ui-dialog-arrow-a,.ui-popup-bottom .ui-dialog-arrow-a{top:-16px;border-bottom:8px solid #7c7c7c}.ui-popup-bottom-left .ui-dialog-arrow-b,.ui-popup-bottom-right .ui-dialog-arrow-b,.ui-popup-bottom .ui-dialog-arrow-b{top:-15px;border-bottom:8px solid #fff}.ui-popup-bottom-left .ui-dialog-arrow-a,.ui-popup-bottom-left .ui-dialog-arrow-b{left:15px}.ui-popup-bottom .ui-dialog-arrow-a,.ui-popup-bottom .ui-dialog-arrow-b{margin-left:-8px;left:50%}.ui-popup-bottom-right .ui-dialog-arrow-a,.ui-popup-bottom-right .ui-dialog-arrow-b{right:15px}.ui-popup-left-bottom .ui-dialog-arrow-a,.ui-popup-left-top .ui-dialog-arrow-a,.ui-popup-left .ui-dialog-arrow-a{right:-16px;border-left:8px solid #7c7c7c}.ui-popup-left-bottom .ui-dialog-arrow-b,.ui-popup-left-top .ui-dialog-arrow-b,.ui-popup-left .ui-dialog-arrow-b{right:-15px;border-left:8px solid #fff}.ui-popup-left-top .ui-dialog-arrow-a,.ui-popup-left-top .ui-dialog-arrow-b{top:15px}.ui-popup-left .ui-dialog-arrow-a,.ui-popup-left .ui-dialog-arrow-b{margin-top:-8px;top:50%}.ui-popup-left-bottom .ui-dialog-arrow-a,.ui-popup-left-bottom .ui-dialog-arrow-b{bottom:15px}.ui-popup-right-bottom .ui-dialog-arrow-a,.ui-popup-right-top .ui-dialog-arrow-a,.ui-popup-right .ui-dialog-arrow-a{left:-16px;border-right:8px solid #7c7c7c}.ui-popup-right-bottom .ui-dialog-arrow-b,.ui-popup-right-top .ui-dialog-arrow-b,.ui-popup-right .ui-dialog-arrow-b{left:-15px;border-right:8px solid #fff}.ui-popup-right-top .ui-dialog-arrow-a,.ui-popup-right-top .ui-dialog-arrow-b{top:15px}.ui-popup-right .ui-dialog-arrow-a,.ui-popup-right .ui-dialog-arrow-b{margin-top:-8px;top:50%}.ui-popup-right-bottom .ui-dialog-arrow-a,.ui-popup-right-bottom .ui-dialog-arrow-b{bottom:15px}@-webkit-keyframes ui-dialog-loading{0%{-webkit-transform:rotate(0deg)}to{-webkit-transform:rotate(1turn)}}@keyframes ui-dialog-loading{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.ui-dialog-loading{vertical-align:middle;position:relative;display:block;*zoom:1;*display:inline;overflow:hidden;width:32px;height:32px;top:50%;margin:-16px auto 0;font-size:0;text-indent:-999em;color:#666;width:100%\9;text-indent:0\9;line-height:32px\9;text-align:center\9;font-size:12px\9}.ui-dialog-loading:after{position:absolute;content:"";width:3px;height:3px;margin:14.5px 0 0 14.5px;border-radius:100%;box-shadow:0 -10px 0 1px #ccc,10px 0 #ccc,0 10px #ccc,-10px 0 #ccc,-7px -7px 0 .5px #ccc,7px -7px 0 1.5px #ccc,7px 7px #ccc,-7px 7px #ccc;-webkit-transform:rotate(1turn);-webkit-animation:ui-dialog-loading 1.5s infinite linear;transform:rotate(1turn);animation:ui-dialog-loading 1.5s infinite linear;display:none\9}</style>
+    <script src="./华东师范大学图书馆座位管理系统_files/ext.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        .back-icon{
+    		position: absolute;
+			z-index: 10;
+			display: block;
+    	}
+		.floor-area-40 {
+			background: url(/Public/home/images/web/area/40/seat-free.jpg) 0 0 no-repeat; 
+			position: relative;
+		}
+		
+		.floor-area ul li.ava-icon{
+		    background: url(/Public/home/images/web/area/40/seat-free.jpg); 
+			background-repeat:no-repeat;
+		}
+		.floor-area ul li.using-icon{
+			background: url(/Public/home/images/web/area/40/seat-use.jpg); 
+			background-repeat:no-repeat;
+		}
+		.floor-area ul li.book-icon{
+			background: url(/Public/home/images/web/area/40/seat-book.jpg);  
+			background-repeat:no-repeat;
+		}
+		.floor-area ul li.leave-icon{
+			background: url(/Public/home/images/web/area/40/seat-leave.jpg);
+			background-repeat:no-repeat;
+		}
+		.floor-area ul li.repair-icon{
+			background: url(/Public/home/images/web/area/40/seat-repair.jpg);
+			background-repeat:no-repeat;
+		}
+        .floor-area ul li.close-icon{
+			background: url(/Public/home/images/web/area/40/seat-close.jpg);
+			background-repeat:no-repeat;
+		}
+        .pswreset{display:none!important;}
+    </style>
+</head>
+<body>
+<div style="position:absolute; right:50px; top:20px; z-index:1000;">
+		<a id="language" class="btn btn-warning">English</a>
+	</div>
+    <!--大屏幕-->
+    <div class="top visible-md visible-lg" style="text-align:center;">
+        <div class="col-xs-12 col-sm-9 top_title">
+            <div class="left systitle">
+                <span class="title">华东师范大学图书馆座位管理系统</span><br>
+				                <span class="min_title">The library space reservation system</span>
+            </div>
+            <ul class="menu">
+                <li style="display: none;"><a href="http://seats.lib.ecnu.edu.cn/home/web/index">首页</a></li>
+				<li class="active"><a href="http://www.lib.ecnu.edu.cn/2020/1111/c14a91761/page.htm">常用问题</a></li>
+				<li class="active"><a href="http://mp.weixin.qq.com/s/HwAIwabfyoS0xwowOQzSZg">视频指南</a></li>
+                <li class="active"><a href="http://seats.lib.ecnu.edu.cn/home/web/f_second">座位预约</a></li>
+                                <li><a href="javascript:void(0);" onclick="bookRule(ska.bookRule);">预约规则</a></li>
+                <li class="login-control">
+                    <a class="login-btn login_click" href="javascript:void(0);">登录</a>
+                </li>
+                <li class="renege" style="display:none;"><a href="http://seats.lib.ecnu.edu.cn/web/renege"></a></li>
+                <li class="logout-control" style="display:none;">
+                <a class="login-welcome" href="http://seats.lib.ecnu.edu.cn/user/index/index/from/index" target="_blank">我的中心</a>
+                欢迎                <a class="logout-btn" href="javascript:void(0);">退出登录</a></li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!--移动端-->
+    <div class="top visible-xs visible-sm top_nav" style="text-align:center; height:auto;">
+        <div class="col-xs-12 col-sm-9 top_title nav_menu">
+            <div class="left systitle">
+                <span class="title2">华东师范大学图书馆座位管理系统</span><br>
+				                <span class="min_title">The library space reservation system</span>
+            </div>
+            <ul class="col-xs-12 mobile_menu">
+                <li style="display: none;"><a href="http://seats.lib.ecnu.edu.cn/home/web/index">首页</a></li>
+				<li class="active"><a href="http://www.lib.ecnu.edu.cn/2020/1111/c14a91761/page.htm">常用问题</a></li>
+				<li class="active"><a href="http://mp.weixin.qq.com/s/HwAIwabfyoS0xwowOQzSZg">视频指南</a></li>
+				<!--<li><a href="/home/book/index">入馆预约</a></li>-->
+                <li class="active"><a href="http://seats.lib.ecnu.edu.cn/home/web/f_second">座位预约</a></li>
+                                <li><a href="javascript:void(0);" onclick="bookRule(ska.bookRule);">预约规则</a></li>
+                <li class="renege" style="display:none;"><a href="http://seats.lib.ecnu.edu.cn/web/renege"></a></li>
+                <li class="logout-control" style="display:none;"><a class="login-welcome" href="http://seats.lib.ecnu.edu.cn/user/index/index/from/index" target="_blank">我的中心</a></li>
+                <li class="login-control">
+                    <a href="javascript:;" class="user-profile dropdown-toggle login-btn login_click" data-toggle="dropdown" aria-expanded="false">
+                    登录                    </a>
+                </li>
+                <li class="logout-control" style=" display:none">
+					欢迎                    <a href="javascript:;" class="user-profile dropdown-toggle logout-btn" data-toggle="dropdown" aria-expanded="false">
+                    退出登录                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <!--手机操作菜单-->
+    <div class="navbar navbar-default phone_menu col-xs-12 visible-xs visible-sm stuckMenu isStuck" role="navigation" style="text-align: center; z-index: 999; clear: both; float: none; position: fixed; top: 0px;">
+        <div class="container-fluid" style=" padding:0px;">
+            <ul class="nav navbar-nav" style="width: 300px; margin: 0 auto; float: none;">
+                <li class="dropdown">
+                    <a href="http://seats.lib.ecnu.edu.cn/web/seat3?area=40&amp;segment=1403094&amp;=2020-12-23&amp;=13:09:12&amp;=22:00#" class="dropdown-toggle" data-toggle="dropdown">校区选择<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li role="separator" class="divider"></li>
+                            <li class=""><a href="http://seats.lib.ecnu.edu.cn/home/web/seat/area/1">中北校区</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class=""><a href="http://seats.lib.ecnu.edu.cn/home/web/seat/area/4">闵行校区</a></li>
+                                                    <li role="separator" class="divider"></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="http://seats.lib.ecnu.edu.cn/web/seat3?area=40&amp;segment=1403094&amp;=2020-12-23&amp;=13:09:12&amp;=22:00#" class="dropdown-toggle" data-toggle="dropdown">选择楼层<b class="caret"></b></a>
+                    <ul class="dropdown-menu" id="floor_select"><li role="separator" class="divider"></li><li><a href="http://seats.lib.ecnu.edu.cn/home/web/seat/area/1/day/">本馆</a></li></ul>
+                </li>
+                <li class="dropdown">
+                    <a href="http://seats.lib.ecnu.edu.cn/web/seat3?area=40&amp;segment=1403094&amp;=2020-12-23&amp;=13:09:12&amp;=22:00#" class="dropdown-toggle" data-toggle="dropdown">日期选择<b class="caret"></b></a>
+                    <ul class="dropdown-menu" id="areadays_phone" style=" text-align:center;"><li role="separator" class="divider"></li><li class="active"><a href="http://seats.lib.ecnu.edu.cn/web/seat3?area=40&amp;segment=1403094&amp;day=2020-12-23&amp;startTime=13:09&amp;endTime=22:00">12月23日 今天<br>13:09-22:00</a></li><li role="separator" class="divider"></li><li><a href="http://seats.lib.ecnu.edu.cn/web/seat3?area=40&amp;segment=1403095&amp;day=2020-12-24&amp;startTime=08:00&amp;endTime=22:00">12月24日 周四<br>08:00-22:00</a></li></ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--手机操作菜单-->
+
+    <!--图书馆校区列表-->
+    <div class="col-xs-12 col-sm-9 xiaoqutitle" style="margin-top: -2px;">
+        <div class="col-xs-12" style="text-align:center; float:none; margin:0 auto; background-color:#F3F3F3;">
+            <h1 style="font-size:34px; color:#eb1d50;">您正在预定【<span id="yuyuetime"></span>】<span id="libraryname">中北校区-一楼平面-一楼B区</span>座位</h1>
+                    </div>
+        <div id="wizard" class="form_wizard wizard_horizontal" style="margin-top:10px;">
+            <ul class="wizard_steps anchor">
+                <li>
+                    <a class="selected" isdone="1" rel="1">
+                        <span class="step_no">1</span>
+                        <span class="step_descr">选择楼层</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="selected" isdone="0" rel="2">
+                        <span class="step_no">2</span>
+                        <span class="step_descr">选择区域和日期</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="selected" isdone="0" rel="3">
+                        <span class="step_no">3</span>
+                        <span class="step_descr">选择座位</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-10 xiaoqu">
+        <div class="x_panel" style="border:0; background:none;">
+            <div class="col-xs-12" id="content" style="height: 629.76px; position: relative; overflow: hidden;">
+                <div id="floor" class="floor-area floor-area-40" style="width: 1120.12px; height: 629.76px; margin: 0px auto; background-size: 1120.12px 629.76px;">
+                <a href="http://seats.lib.ecnu.edu.cn/web/seat2/area/2" class="back-icon" style="left: 994.66px; top: 552.68px; width: 106.6px; height: 68.88px; position: absolute; z-index: 999;"></a>
+                <!-- 座位信息 -->
+		        <ul style="height: 629.76px; width: 1120.12px;">
+		        </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!--底部信息-->
+    <div class="foots col-xs-12">
+        <div class="col-xs-12">Copyright © 2019.Company name All rights reserved. </div>
+    </div>
+
+    <!--大屏幕左右侧菜单-->
+    <div id="nav" class="visible-md visible-lg">
+        <div id="nav-floor" class="left"><a href="http://seats.lib.ecnu.edu.cn/home/web/seat/area/1/day/" type="button" class="btn btn-default">本馆</a></div>
+        <div id="nav-date" class="left"><a class="btn btn-default active area_day" href="http://seats.lib.ecnu.edu.cn/web/seat3?area=40&amp;segment=1403094&amp;day=2020-12-23&amp;startTime=13:09&amp;endTime=22:00" role="button">12月23日 今天<br>13:09-22:00</a><a class="btn btn-default area_day" href="http://seats.lib.ecnu.edu.cn/web/seat3?area=40&amp;segment=1403095&amp;day=2020-12-24&amp;startTime=08:00&amp;endTime=22:00" role="button">12月24日 周四<br>08:00-22:00</a><div class="clear"></div></div>
+    </div>
+    <!--大屏幕左右侧菜单-->
+    <div id="changeplace" class="visible-md visible-lg">
+        <!--入馆预约切换按钮-->
+        <a id="rgyy" type="button" href="http://seats.lib.ecnu.edu.cn/home/book/index" class="btn btn-info" style="padding: 10px 20px; font-size: 20px; display: none;">入馆<br>预约</a><br>
+        <button type="button" class="btn btn-danger" style="padding:10px 20px; font-size:20px;">切换<br>校区</button>
+        <div class="place_menu">
+             <a href="http://seats.lib.ecnu.edu.cn/home/web/seat/area/1" type="button" class="btn btn-primary">中北校区</a><br>
+                <a href="http://seats.lib.ecnu.edu.cn/home/web/seat/area/4" type="button" class="btn btn-primary">闵行校区</a><br>
+                        </div>
+    </div>
+    <!--大屏幕左右侧菜单-->
+
+
+
+<script>
+    //语言设置
+    var language="";
+    if(language=="en")
+        $("#language").text("中文");
+    else
+        $("#language").text("English");
+    $("#language").click(function(){
+		if(window.location.href.indexOf("?")>0){
+			if(this.innerText=='English'){
+				if(window.location.href.indexOf("language")>0)
+					window.location.href = window.location.href.substring(0,window.location.href.indexOf("language"))+"&language=en";
+				else
+					window.location.href = window.location.href+"&language=en";
+			}
+			if(this.innerText=='中文'){
+				if(window.location.href.indexOf("language")>0)
+					window.location.href = window.location.href.substring(0,window.location.href.indexOf("language"))+"&language=zh";
+				else
+					window.location.href = window.location.href+"&language=zh";
+			}
+		}else{
+			if(this.innerText=='English')
+            	window.location.href=window.location.pathname+"?language=en";
+        	if(this.innerText=='中文')
+            	window.location.href=window.location.pathname+"?language=zh";
+		}
+    });
+    function foot_set(){
+        //底部固定
+        var content_top = $(window).height();
+        var footer_top = $('.foots').offset().top;
+        if (footer_top < content_top) {
+            $('.foots').css('position', 'absolute')
+            $('.foots').css('bottom', 0)
+        }
+    }
+    window.ska = {
+        'bookRule':"zh"=="en"?[""]:["<p>1\u3001\u6bcf\u59297\uff1a00\u5f00\u59cb\uff0c\u8bfb\u8005\u53ef\u4ee5\u9884\u7ea6\u5f53\u65e5\u6216\u6b21\u65e5\u7684\u5ea7\u4f4d\uff0c\u9884\u7ea6\u6210\u529f\u540e\u8bfb\u8005\u53ef\u4ee5\u4f7f\u7528\u8be5\u5ea7\u4f4d\u81f3\u5f53\u65e5\u95ed\u9986\u3002\u9884\u7ea6\u7cfb\u7edf\u767b\u5f55\u7528\u6237\u540d\u4e3a\u5b66\u53f7\/\u5de5\u53f7\uff0c\u5bc6\u7801\u4e3a\u516c\u5171\u6570\u636e\u5e93\u5bc6\u7801\u3002<\/p>","<p>2\u3001\u8bfb\u8005\u53ef\u901a\u8fc7\u4ee5\u4e0b\u4e09\u79cd\u65b9\u5f0f\u9884\u7ea6\u5e76\u4f7f\u7528\u5f53\u65e5\u5ea7\u4f4d\u3002<\/p>","<p>\uff081\uff098\uff1a00\u4e4b\u524d\u9884\u7ea6\u5f53\u65e5\u5ea7\u4f4d\uff0c\u5e76\u57288\uff1a30\u4e4b\u524d\u901a\u8fc7\u95e8\u7981\u95f8\u673a\u5237\u5361\u5165\u9986\uff0c\u7cfb\u7edf\u5373\u53ef\u81ea\u52a8\u5b8c\u6210\u7b7e\u5230\u3002<\/p>","<p>\uff082\uff09\u5f53\u65e5\u5176\u4ed6\u5f00\u653e\u65f6\u6bb5\uff0c\u5728\u9986\u5916\u901a\u8fc7\u7f51\u7edc\u9884\u7ea6\u5f53\u65e5\u5ea7\u4f4d\uff0c\u5e76\u5728\u9884\u7ea6\u6210\u529f\u540e30\u5206\u949f\u5185\u524d\u5f80\u56fe\u4e66\u9986\u901a\u8fc7\u95e8\u7981\u95f8\u673a\u5237\u5361\u5165\u9986\uff0c\u7cfb\u7edf\u5373\u53ef\u81ea\u52a8\u5b8c\u6210\u7b7e\u5230\u3002<\/p>","<p>\uff083\uff09\u901a\u8fc7\u56fe\u4e66\u9986\u95e8\u7981\u95f8\u673a\u5237\u5361\u5165\u9986\uff0c\u518d\u901a\u8fc7\u7f51\u7edc\u6216\u73b0\u573a\u9884\u7ea6\u673a\u9884\u7ea6\u5f53\u65e5\u5ea7\u4f4d\uff0c\u9884\u7ea6\u6210\u529f\u540e\u5373\u81ea\u52a8\u5b8c\u6210\u7b7e\u5230\u3002<\/p>","<p>3\u3001\u9884\u7ea6\u6b21\u65e5\u5ea7\u4f4d\u7684\u8bfb\u8005\uff0c\u9700\u5728\u6b21\u65e58\uff1a30\u524d\u901a\u8fc7\u95e8\u7981\u95f8\u673a\u5237\u5361\u5165\u9986\uff08\u7cfb\u7edf\u81ea\u52a8\u5b8c\u6210\u7b7e\u5230\uff09\u3002<\/p>","<p>4\u3001\u53d6\u6d88\u9884\u7ea6\uff1a\u8bfb\u8005\u9884\u7ea6\u6b21\u65e5\u5ea7\u4f4d\u540e\uff0c\u53ef\u5728\u6b21\u65e57\uff1a00\u4e4b\u524d\u53d6\u6d88\u9884\u7ea6\uff08\u4e0d\u9650\u6b21\u6570\uff09\u3002\u9884\u7ea6\u5f53\u65e5\u5ea7\u4f4d\u540e\uff0c\u9650\u6bcf\u5929\u53d6\u6d881\u6b21\u3002\u5177\u4f53\u64cd\u4f5c\uff1a\u70b9\u51fb\u6211\u7684\u4e2d\u5fc3--\u6211\u7684\u9884\u7ea6--\u53d6\u6d88\u9884\u7ea6\u3002<\/p>","<p>5\u3001\u201c\u672a\u7b7e\u5230\u201d\u8fdd\u89c4\uff1a\u9884\u7ea6\u6210\u529f\u540e\u672a\u5728\u7b2c2\u3001\u7b2c3\u6761\u89c4\u5b9a\u65f6\u95f4\u5185\u7b7e\u5230\uff0c\u4e5f\u672a\u5728\u7b2c4\u6761\u89c4\u5b9a\u65f6\u95f4\u5185\u53d6\u6d88\u9884\u7ea6\u7684\u8bfb\u8005\u5c06\u88ab\u8bb0\u201c\u672a\u7b7e\u5230\u201d\u8fdd\u89c41\u6b21\u3002<\/p>","<p>6\u3001\u4e34\u65f6\u79bb\u5f00\uff1a\u5728\u9009\u5ea7\u673a\u4e0a\u5237\u5361\u6216\u4ece\u7f51\u9875\u6216\u4ece\u5fae\u4fe1\u7aef\u9009\u62e9\u201c\u4e34\u65f6\u79bb\u5f00\u201d\uff0c\u5ea7\u4f4d\u5c06\u4fdd\u755960\u5206\u949f\uff08\u4e2d\u534810\uff1a30-13\uff1a00\u548c\u4e0b\u534816\uff1a30-19\uff1a00\u671f\u95f4\u79bb\u5f00\u5206\u522b\u4fdd\u7559120\u5206\u949f\u548c90\u5206\u949f\uff0c\u4ece\u79bb\u5f00\u65f6\u95f4\u8d77\u7b97\uff09\u3002\u5df2\u9009\u62e9\u201c\u4e34\u65f6\u79bb\u5f00\u201d\u7684\u8bfb\u8005\u5728\u4fdd\u7559\u65f6\u95f4\u5185\u8fd4\u56de\u65f6\uff0c\u901a\u8fc7\u95e8\u7981\u95f8\u673a\u5165\u9986\u5373\u81ea\u52a8\u5b8c\u6210\u7b7e\u5230\u3002\u82e5\u9009\u62e9\u4e86\u201c\u4e34\u65f6\u79bb\u5f00\u201d\uff0c\u4f46\u5b9e\u9645\u53c8\u6ca1\u79bb\u9986\uff0c\u4e5f\u9700\u5728\u89c4\u5b9a\u65f6\u95f4\u5185\u5728\u9009\u5ea7\u673a\u4e0a\u5237\u5361\u6216\u901a\u8fc7\u7f51\u9875\u7aef\u64cd\u4f5c\u5b8c\u6210\u7b7e\u5230\u3002\u8bfb\u8005\u672a\u5728\u4fdd\u7559\u65f6\u95f4\u5185\u8fd4\u56de\u7b7e\u5230\uff0c\u7cfb\u7edf\u5c06\u81ea\u52a8\u91ca\u653e\u5ea7\u4f4d\u4f9b\u4ed6\u4eba\u9009\u7528\uff0c\u5e76\u8bb0\u201c\u4e34\u65f6\u79bb\u5f00\u8d85\u65f6\u201d\u8fdd\u89c41\u6b21\u3002<\/p>","<p>7\u3001\u79bb\u9986\uff1a\u8bfb\u8005\u6bcf\u6b21\u79bb\u9986(\u542b\u4e34\u65f6\u79bb\u9986)\u5747\u9700\u5237\u5361\u4ece\u95e8\u7981\u95f8\u673a\u51fa\u9986\uff0c\u5426\u5219\u5c06\u88ab\u8bb0\u201c\u79bb\u5f00\u672a\u5237\u5361\u201d\u8fdd\u89c4\u3002\u8bfb\u8005\u672a\u9009\u62e9\u201c\u4e34\u65f6\u79bb\u5f00\u201d\uff0c\u901a\u8fc7\u95e8\u7981\u95f8\u673a\u51fa\u9986\u65f6\uff0c\u5ea7\u4f4d\u5c06\u81ea\u52a8\u91ca\u653e\u3002<\/p>","<p>8\u3001\u6ca1\u6709\u516c\u5171\u6570\u636e\u5e93\u8d26\u53f7\u7684\u8bfb\u8005\uff08\u6821\u53cb\u7b49\uff09\uff0c\u4e0d\u80fd\u901a\u8fc7\u7f51\u4e0a\u63d0\u524d\u9884\u7ea6\u5ea7\u4f4d\uff0c\u8bf7\u5165\u9986\u540e\u5728\u73b0\u573a\u9009\u5ea7\u673a\u4e0a\u9009\u62e9\u9884\u7ea6\u5ea7\u4f4d\u3002<\/p>","<p>9\u3001\u8bf7\u8bfb\u8005\u81ea\u89c9\u7ef4\u62a4\u9986\u5185\u79e9\u5e8f\uff0c\u52ff\u968f\u610f\u79fb\u52a8\u684c\u6905\uff0c\u4e2a\u4eba\u7269\u54c1\u8bf7\u81ea\u884c\u59a5\u5584\u4fdd\u7ba1\u3002\u6bcf\u5929\u95ed\u9986\u65f6\uff0c\u8bf7\u5e26\u8d70\u6240\u6709\u4e2a\u4eba\u7269\u54c1\uff08\u957f\u671f\u5b58\u5305\u7bb1\u5185\u7269\u54c1\u9664\u5916\uff09\u3002\u5982\u88ab\u6e05\u7406\uff0c\u4ea7\u751f\u7684\u635f\u5931\u7531\u8bfb\u8005\u672c\u4eba\u81ea\u8d1f\u3002<\/p>","<p>\u9644\uff1a\u8fdd\u89c4\u7c7b\u578b\u8bf4\u660e<\/p>","<p>1\u3001\u672a\u7b7e\u5230\uff1a\u6307\u8bfb\u8005\u9884\u7ea6\u5ea7\u4f4d\u6210\u529f\u540e\uff0c\u672a\u5728\u89c4\u5b9a\u65f6\u95f4\u5185\u5237\u5361\u7b7e\u5230\uff08\u672a\u901a\u8fc7\u95e8\u7981\u95f8\u673a\u5165\u9986\u7b7e\u5230\u6216\u8005\u672a\u5728\u9009\u5ea7\u673a\u4e0a\u5237\u5361\u7b7e\u5230\uff09\u6240\u4ea7\u751f\u7684\u8fdd\u89c4\u3002<\/p>","<p>2\u3001\u4e34\u65f6\u79bb\u5f00\u8d85\u65f6\uff1a\u6307\u8bfb\u8005\u529e\u7406\u4e86\u201c\u4e34\u65f6\u79bb\u5f00\u201d\u540e\uff0c\u5728\u4fdd\u7559\u65f6\u95f4\u5185\u672a\u80fd\u901a\u8fc7\u95e8\u7981\u95f8\u673a\u5165\u9986\u7b7e\u5230\u6216\u672a\u5728\u9986\u5185\u9009\u5ea7\u673a\u4e0a\u5237\u5361\u7b7e\u5230\u6240\u4ea7\u751f\u7684\u8fdd\u89c4\u3002<\/p>","<p>3\u3001\u79bb\u5f00\u672a\u5237\u5361\uff1a\u6307\u8bfb\u8005\u9884\u7ea6\u5ea7\u4f4d\u540e\uff0c\u79bb\u9986\u65f6\u672a\u5237\u5361\uff0c\u5f53\u65e5\u518d\u6b21\u4ece\u95e8\u7981\u95f8\u673a\u5165\u9986\u65f6\u6240\u4ea7\u751f\u7684\u8fdd\u89c4\uff08\u665a\u4e0a21\uff1a00\u540e\u79bb\u9986\u4e0d\u5237\u5361\uff0c\u4e0d\u8bb0\u8fdd\u89c4\uff0c\u4f46\u5f53\u65e5\u518d\u6b21\u8fdb\u9986\u4f1a\u4ea7\u751f\u201c\u79bb\u5f00\u672a\u5237\u5361\u201d\u8fdd\u89c4\uff09\u3002\u79bb\u9986\u672a\u5237\u5361\u7684\u8bfb\u8005\u518d\u6b21\u901a\u8fc7\u95e8\u7981\u95f8\u673a\u5165\u9986\u65f6\uff0c\u7cfb\u7edf\u5c06\u81ea\u52a8\u91ca\u653e\u8be5\u8bfb\u8005\u4e4b\u524d\u9884\u7ea6\u7684\u5ea7\u4f4d\u3002<\/p>","<p>\u6ce8\uff1a\u8bfb\u8005\u5728\u5404\u9986\u4f7f\u7528\u5ea7\u4f4d\u53d1\u751f\u7684\u5404\u7c7b\u578b\u8fdd\u89c4\u8bb0\u5f55\uff0c\u5c06\u7edf\u5408\u5e76\u7d2f\u8ba1\u3002\u8fdd\u89c4\u7d2f\u8ba1\u6ee15\u6b21\uff0c\u6682\u505c\u4f7f\u7528\uff08\u542b\u9884\u7ea6\uff09\u5ea7\u4f4d\u6743\u96503\u4e2a\u81ea\u7136\u65e5\u3002\u505c\u7528\u671f\u7ed3\u675f\u540e\uff0c\u8fdd\u89c4\u8ba1\u6b21\u5f52\u96f6\uff0c\u6062\u590d\u9009\u4f4d\u548c\u9884\u7ea6\u6743\u9650\u3002<\/p>"],
+        'backUrl': "/web/seat2/area/2",
+        'areaUrl':"/web/seat3",
+        'dayApi':"/api.php/space_days",
+        'timeApi':"/api.php/space_time_buckets",
+        'usersApi':"/api.php/users",
+        'spacesApi':"/api.php/spaces",
+        'area':40,
+        'areaApi':"/api.php/areas",
+        'areadaysApi':"/api.php/areadays",
+        'segment':1403094,
+        'day':'',
+        //'startTime': "13:09",
+        'startTime':'',
+        'endTime':'',
+        'queryDateTime':'',
+        //'currentDateTime':'',
+        'loginApi': "/api.php/login",
+        'logoutApi': "/api.php/logout",
+        'access_token':"",
+        'userid':"",
+        'checkUrl':"/api.php/check",
+        'username':"",
+    }
+
+    var size = ($('#content').width()/1366).toFixed(2);
+    if(size < 0.5)
+        size = 0.5;
+    /*if(window.innerWidth>1900){
+        var content_top=window.innerHeight-$("#content").offset().top-55-59;
+        if(768*size>content_top)
+            size = (content_top/768).toFixed(2);
+    }*/
+    $(document).ready(function () {
+        //首页是否显示
+        if(0==0){
+            $('.menu li:first').css("display","none");
+            $('.mobile_menu li:first').css("display","none");
+        }
+        //中英文切换按钮是否显示
+        if(1==0){
+            $('#language').css("display","none");
+        }
+        //入馆预约按钮是否显示
+        if(0==0){
+            $('#rgyy').css("display","none");
+        }
+
+        //floor尺寸设定
+        $("#content").css('height',$('#floor').height()*size)
+        $("#floor").css('height',768*size);
+        $("#floor").css('width',1366*size);
+        $("#floor ul").css('height',768*size);
+        $("#floor ul").css('width',1366*size);
+        $("#floor").css('backgroundSize',1366*size+'px '+768*size+'px');
+        //手机屏幕上显示时显示右侧信息
+        $("#content").scrollLeft($("#content")[0].scrollWidth);
+
+        $("#changeplace").hover(function () {
+            $(".place_menu").css("display", "block");
+        }, function () {
+            $(".place_menu").css("display", "none");
+        });
+        //禁止右键
+        $(document).bind("contextmenu",function(e){   
+            return false;   
+        }); 
+        //返回按钮
+        $(".back-icon").css('left',1213*size+"px");
+        $(".back-icon").css('top',674*size+"px");
+        $(".back-icon").css('width',130*size+"px");
+        $(".back-icon").css('height',84*size+"px");
+        $(".back-icon").css('position',"absolute");
+        $(".back-icon").css('z-index',"999");
+        //填写预约日期
+        $("#yuyuetime").html('');
+        var d = new Date(''); 
+		var dd = d.toDateString().split(" ");
+        //英文日期
+        $("#yuyuetime2").html(dd[1]+'.'+dd[2]+' '+dd[0]+','+dd[3]);
+        //校区名称
+        var libraryname = "";
+        //楼层名
+        var currentfloor="";
+        //根据属性结构获取图书馆名称
+        load_area("/api.php/areas/20/tree/1",function(data){
+            //console.log(data);
+            if(data.status ==1 ){
+                var areas = data.data.list;
+                var school_index;
+                var floor_id;
+                        jQuery.each(areas, function(index, val) {
+                         var child_areas=val._child;
+                          jQuery.each(child_areas, function(child_index, val) {
+                                var child_child_areas=val._child;
+                                jQuery.each(child_child_areas, function(child_child_index, val) {
+                                   if(val.id=="40")
+                                   {
+                                        $("#libraryname").html(areas[index].name+'-'+child_areas[child_index].name+'-'+child_child_areas[child_child_index].name);
+                                        $("#libraryenname").html(areas[index].enname+'-'+child_areas[child_index].enname+'-'+child_child_areas[child_child_index].enname);
+                                        if(""=="en"){
+                                            //记录校区名称
+                                            libraryname=areas[index].enname;
+                                            //记录楼层
+                                            currentfloor = child_areas[child_index].enname;
+                                        }else{
+                                            //记录校区名称
+                                            libraryname=areas[index].name;
+                                            //记录楼层
+                                            currentfloor = child_areas[child_index].name;
+                                        }
+                                        //记录校区下标
+                                        school_index = index;
+                                        //记录楼层ID
+                                        floor_id = child_areas[child_index].id;
+                                   }
+                               });
+                           });
+					    });
+                        var floor_html="";
+                        var floor_html_phone="";
+                        var day = "";
+                        var seatnum = get_seat(areas[school_index].id,day);
+                        jQuery.each(areas[school_index]._child, function(index, val) {
+                            if(seatnum[val.id+"HasArea"]){
+                                if(""=="en"){
+                                    if(!val.isValid||!seatnum[val.id+"isValid"]){
+                                        floor_html+="<a  href=\"javascript:void(0);\" style=\"background-color:#CCC;\" type=\"button\" class=\"btn btn-default\">"+val.enname+" Avl:"+seatnum[val.id+"AvailableSpace"]+"</a>";
+                                        floor_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+                                    "<li style=\"background-color:#CCC;\"><a href=\"javascript:void(0);\">"+val.enname+" Avl:"+seatnum[val.id+"AvailableSpace"]+"</a></li>";
+                                    }
+                                    else if(val.id=="40"){
+                                        floor_html+="<a  href=\"/home/web/seat2/area/"+val.id+"/day/"+day+"\" type=\"button\" class=\"btn btn-default active\">"+val.enname+" Avl:"+seatnum[val.id+"AvailableSpace"]+"</a>";
+                                        floor_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+                                                "<li class=\"active\"><a href=\"/home/web/seat2/area/"+val.id+"/day/"+day+"\">"+val.enname+" Avl:"+seatnum[val.id+"AvailableSpace"]+"</a></li>";
+                                    }
+                                    else{
+                                        floor_html+="<a  href=\"/home/web/seat2/area/"+val.id+"/day/"+day+"\" type=\"button\" class=\"btn btn-default\">"+val.enname+" Avl:"+seatnum[val.id+"AvailableSpace"]+"</a>";
+                                        floor_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+                                            "<li><a href=\"/home/web/seat2/area/"+val.id+"/day/"+day+"\">"+val.enname+" Avl:"+seatnum[val.id+"AvailableSpace"]+"</a></li>";
+                                    }
+                                }else{
+                                    if(!val.isValid||!seatnum[val.id+"isValid"]){
+                                        floor_html+="<a  href=\"javascript:void(0);\" style=\"background-color:#CCC;\" type=\"button\" class=\"btn btn-default\">"+val.name+"空座:"+seatnum[val.id+"AvailableSpace"]+"</a>";
+                                        floor_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+                                    "<li style=\"background-color:#CCC;\"><a href=\"javascript:void(0);\">"+val.name+"空座:"+seatnum[val.id+"AvailableSpace"]+"</a></li>";
+                                    }
+                                    else if(val.id=="40"){
+                                        floor_html+="<a  href=\"/home/web/seat2/area/"+val.id+"/day/"+day+"\" type=\"button\" class=\"btn btn-default active\">"+val.name+"空座:"+seatnum[val.id+"AvailableSpace"]+"</a>";
+                                        floor_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+                                                "<li class=\"active\"><a href=\"/home/web/seat2/area/"+val.id+"/day/"+day+"\">"+val.name+"空座:"+seatnum[val.id+"AvailableSpace"]+"</a></li>";
+                                    }
+                                    else{
+                                        floor_html+="<a  href=\"/home/web/seat2/area/"+val.id+"/day/"+day+"\" type=\"button\" class=\"btn btn-default\">"+val.name+"空座:"+seatnum[val.id+"AvailableSpace"]+"</a>";
+                                        floor_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+                                            "<li><a href=\"/home/web/seat2/area/"+val.id+"/day/"+day+"\">"+val.name+"空座:"+seatnum[val.id+"AvailableSpace"]+"</a></li>";
+                                    }
+                                }
+                                /*if(!val.isValid||!seatnum[val.id+"isValid"]){
+                                    floor_html+="<a  href=\"javascript:void(0);\" style=\"background-color:#CCC;\" type=\"button\" class=\"btn btn-default\">"+val.name+"空座:"+seatnum[val.id+"AvailableSpace"]+"</a>";
+                                    floor_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+                                "<li style=\"background-color:#CCC;\"><a href=\"javascript:void(0);\">"+val.name+"空座:"+seatnum[val.id+"AvailableSpace"]+"</a></li>";
+                                }
+                                else if(val.id==floor_id){
+                                    floor_html+="<a  href=\"/home/web/seat2/area/"+val.id+"/day/"+day+"\" type=\"button\" class=\"btn btn-default active\">"+val.name+"空座:"+seatnum[val.id+"AvailableSpace"]+"</a>";
+                                    floor_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+                                        "<li class=\"active\"><a href=\"/home/web/seat2/area/"+val.id+"/day/"+day+"\">"+val.name+"空座:"+seatnum[val.id+"AvailableSpace"]+"</a></li>";
+                                }
+                                else{
+                                    floor_html+="<a  href=\"/home/web/seat2/area/"+val.id+"/day/"+day+"\" type=\"button\" class=\"btn btn-default\">"+val.name+"空座:"+seatnum[val.id+"AvailableSpace"]+"</a>";
+                                    floor_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+                                        "<li><a href=\"/home/web/seat2/area/"+val.id+"/day/"+day+"\">"+val.name+"空座:"+seatnum[val.id+"AvailableSpace"]+"</a></li>";
+                                }*/
+                            }
+                        });
+                        floor_html+="<a  href=\"/home/web/seat/area/"+areas[school_index].id+"/day/"+day+"\" type=\"button\" class=\"btn btn-default\">本馆</a>";
+                        floor_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+                                    "<li><a href=\"/home/web/seat/area/"+areas[school_index].id+"/day/"+day+"\">本馆</a></li>";
+                                    //"<li role=\"separator\" class=\"divider\"></li>";
+                        $("#nav-floor").html(floor_html);
+                        $("#floor_select").html(floor_html_phone);
+            }else{
+                alertDialog('无可预约区域','error');
+            }
+        });	
+
+        //获取区域座位数和空余座位数
+        function get_seat(areaid,day){
+            var seatnum={};
+            //区域载入
+            load_area2(ska.areaApi+"/0/date/"+day,function(data){
+                console.log(data);
+                if(data.status ==1 ){
+                    var areas = data.data.list.childArea;
+                            //遍历判断可预约状态
+                            jQuery.each(areas, function(index, val) {
+                                if(val.parentId == areaid)
+                                {
+                                    seatnum[val.id+"TotalCount"]=0;
+                                    seatnum[val.id+"AvailableSpace"]=0;
+                                    seatnum[val.id+"HasArea"] = 0;
+                                    seatnum[val.id+"isValid"]=0;
+                                    jQuery.each(areas, function(child_index, sec_val) {
+                                        if(sec_val.isValid){
+                                            if((sec_val.parentId == val.id)&&(sec_val.type==1)){
+                                                seatnum[val.id+"TotalCount"]+=sec_val.TotalCount;
+                                                seatnum[val.id+"AvailableSpace"]+=sec_val.TotalCount-sec_val.UnavailableSpace;
+                                                //当前父层是否包含子区域（不管子区域是否可用）
+                                                seatnum[val.id+"HasArea"] = 1;
+                                                //当前父层是否包含可用子区域
+                                                if(sec_val.isValid)
+                                                    seatnum[val.id+"isValid"] = 1;
+                                            }
+                                        }
+                                    });
+                                }
+					        });
+                }else{
+                    alertDialog('无可预约区域','error');
+                }
+            });
+            return seatnum;
+        }
+
+
+        ska.queryDateTime =  ska.day+' '+ska.startTime;
+			$(".renege").hide();
+			//载入座位信息
+            function getdetails(){
+			    load_seat(ska.area,ska.segment,ska.day,ska.startTime,ska.endTime);
+            }
+            getdetails();
+            //每隔30秒刷新座位
+            window.setInterval(
+            getdetails, 60000);
+            //检测登录
+			var str="";
+            str = str.replace(/\-/g, "/");
+            var expire = new Date(str);
+            var now = new Date();
+            if (ska.username && (now < expire)) {
+				$(".login-control").hide();
+				$(".logout-control").show();
+			}
+
+            //获取区域最大可预约天数
+            load_area2(ska.areadaysApi+"/"+40,function(data){
+                console.log(data);
+                if(data.status ==1 ){
+                    var maxday = data.data.list;
+                    var weekday = new Array('周日','周一','周二','周三','周四','周五','周六');
+                    if(""=="en")
+                        weekday = new Array('Sun.','Mon.','Tues.','Wed.','Thur.','Fri.','Sat.'); 
+                    var ret_html="";
+                    var ret_html_phone="";
+                    for(i=0;i<maxday.length;i++){
+                        var myDate = new Date(Date.parse(maxday[i].day))
+                        var day="";
+                        var nowday=new Date();
+                        if(day)
+                            nowday = new Date(Date.parse(day));
+                        //获取可用时间段
+                        var baseUrl = ska.areaUrl;
+                        var val = maxday[i];
+                        var begt=val.startTime?val.startTime.date.substring(11,16):'00:00';
+                        var nowtime=new Date();
+                        if((myDate.getMonth()==nowtime.getMonth())&&(myDate.getDate()==nowtime.getDate())&&(((nowtime.getHours()>9?nowtime.getHours():'0'+nowtime.getHours())+':'+(nowtime.getMinutes()>9?nowtime.getMinutes():'0'+nowtime.getMinutes()))>val.startTime.date.substring(11,16)))
+                            begt = (nowtime.getHours()>9?nowtime.getHours():'0'+nowtime.getHours())+':'+(nowtime.getMinutes()>9?nowtime.getMinutes():'0'+nowtime.getMinutes());
+                        var endt=val.endTime?val.endTime.date.substring(11,16):'00:00';
+		                if( baseUrl.indexOf('?')>0){
+			                    baseUrl += '&area='+ska.area+'&segment='+maxday[i]['id']+'&day='+myDate.getFullYear()+'-'+(myDate.getMonth() + 1)+'-'+myDate.getDate()+'&startTime='+begt+'&endTime='+endt;
+                        }else{
+                                baseUrl =  baseUrl.replace(/\?.*$/,'')+'?'+'area='+ska.area+'&segment='+val['id']+'&day='+myDate.getFullYear()+'-'+(myDate.getMonth() + 1)+'-'+myDate.getDate()+'&startTime='+begt+'&endTime='+endt;
+                        }
+
+                        var TodayStr="";
+                        var datestr="";
+                        //中英文切换
+                        if(""=="en"){
+                            TodayStr=" Today";
+                            var myDateStr = myDate.toDateString().split(" ");
+                            datestr = myDateStr[1]+'.'+myDateStr[2];
+                        }else{
+                            TodayStr=" 今天";
+                            datestr = (myDate.getMonth() + 1)+'月'+myDate.getDate()+'日';
+                        }
+                        if(!val.startTime||begt>endt){
+                            if(i==0){
+                            ret_html+="<a class=\"btn btn-default area_day\" style=\"background-color:#CCC;\" href=\"javascript:void(0)\" role=\"button\">"+datestr+TodayStr+"<br/>暂停预约</a>";
+                                ret_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+                                "<li><a href=\"javascript:void(0)\" style=\"background-color:#CCC;\">"+datestr+TodayStr+"<br/>暂停预约</a></li>";
+                            }
+                            else{
+                                ret_html+="<a class=\"btn btn-default area_day\" style=\"background-color:#CCC;\" href=\"javascript:void(0)\" role=\"button\">"+datestr+' '+weekday[myDate.getDay()]+"<br/>暂停预约</a>";
+                                ret_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+                                "<li><a href=\"javascript:void(0)\" style=\"background-color:#CCC;\">"+datestr+' '+weekday[myDate.getDay()]+"<br/>暂停预约</a></li>";
+                            }
+                        }
+                        else if(i==0){
+							if((myDate.getMonth()==nowday.getMonth())&&(myDate.getDate()==nowday.getDate())){
+								ret_html+="<a class=\"btn btn-default active area_day\" href=\""+baseUrl+"\" role=\"button\">"+datestr+TodayStr+"<br/>"+begt+'-'+endt+"</a>";
+								ret_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+								"<li class=\"active\"><a href=\""+baseUrl+"\">"+datestr+TodayStr+"<br/>"+begt+'-'+endt+"</a></li>";
+							}
+							else{
+								ret_html+="<a class=\"btn btn-default area_day\" href=\""+baseUrl+"\" role=\"button\">"+datestr+TodayStr+"<br/>"+begt+'-'+endt+"</a>";
+								ret_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+								"<li><a href=\""+baseUrl+"\">"+datestr+TodayStr+"<br/>"+begt+'-'+endt+"</a></li>";
+							}
+                        }
+                        else if((myDate.getMonth()==nowday.getMonth())&&(myDate.getDate()==nowday.getDate())){
+                            ret_html+="<a class=\"btn btn-default active area_day\" href=\""+baseUrl+"\" role=\"button\">"+datestr+' '+weekday[myDate.getDay()]+"<br/>"+begt+'-'+endt+"</a>";
+                            ret_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+                                "<li class=\"active\"><a href=\""+baseUrl+"\">"+datestr+' '+weekday[myDate.getDay()]+"<br/>"+begt+'-'+endt+"</a></li>";    
+                        }
+                        else{
+                            ret_html+="<a class=\"btn btn-default area_day\" href=\""+baseUrl+"\" role=\"button\">"+datestr+' '+weekday[myDate.getDay()]+"<br/>"+begt+'-'+endt+"</a>";
+                            ret_html_phone+="<li role=\"separator\" class=\"divider\"></li>"+
+                                "<li><a href=\""+baseUrl+"\">"+datestr+' '+weekday[myDate.getDay()]+"<br/>"+begt+'-'+endt+"</a></li>";
+                        }
+                    }
+                    ret_html+="<div class=\"clear\"></div>";
+                    //ret_html_phone+="<li role=\"separator\" class=\"divider\"></li>";
+                    $("#nav-date").html(ret_html);
+                    $("#areadays_phone").html(ret_html_phone);
+                }else{
+                    alertDialog('该区域没有可预约的时间','error');
+                }
+            });
+
+            //获取某区域某天的可用时间段
+            function get_area_time(day,area,timeApi){
+                var backData;
+	            jQuery.ajax({
+		              url: timeApi,
+		              type: 'GET',
+		              dataType: "JSON",
+		              data: {'day': day,'area': area},
+                      async: false,
+		              success: function(data, textStatus, xhr) {
+                        backData = data;
+		              },
+		              error: function(xhr, textStatus, errorThrown) {
+		                //called when there is an error
+		                //弹窗提示获取区域失败
+			            alertDialog('网络错误，请重试  错误代码:cj11','error');
+		              }
+		            });
+                return backData;
+            }
+
+//			setTimeout(function ()
+//			{
+//				logout();
+//			},180000);
+
+
+			//登录
+			$(".login-btn").click(function(event) {
+				 login();
+			});
+			//登出
+			$(".logout-btn").click(function(event) {
+				 logout();
+			});
+ 
+			//预约空间预约点击弹出提示刷卡	
+			$("ul").on('click', '.seat', function(event) {
+				event.preventDefault();
+
+				var space = $(this).attr('data-no'); //预约空间预约id  
+				var spaceInfo = jQuery.parseJSON($(this).attr('data-data'));
+				//判断座位是否可用
+				if (spaceInfo.status != 1) {
+					alertDialog('该预约空间不可用，'+spaceInfo.status_name,'error');
+					return false;
+				}
+				if (ska.segment == 0) {
+					 alertDialog('预约时间已过期，请重新选择','error');
+					 return false;
+				}
+
+				//判断是否登录
+				if (!ska.access_token) {
+					login();
+					return false;
+				}
+
+				//console.log(spaceInfo);
+				var bookTipInfo = '';
+				bookTipInfo += '<div class="bookTipInfo">';
+                bookTipInfo += '<p class="book-times">'+$('.current-book-time').text()+'</p>';
+                if(""=="en"){
+                    bookTipInfo += '<p class="book-spaces">预约座位：'+spaceInfo.area_enname+' - '+spaceInfo.no+','+libraryname+'</p>';
+                }else{
+                    bookTipInfo += '<p class="book-spaces">预约座位：'+libraryname+' - '+spaceInfo.area_name+' - '+spaceInfo.no+'号座位</p>';
+                }
+				bookTipInfo += '</div>';
+				dialog({
+					'id':'book-tip-info',
+					'skin':'green-dialog',
+					'padding':'50px',
+					'z-index': 1000,
+					'title':'预约确认',
+                    quickClose: true,
+					'content':bookTipInfo,
+					'statusbar':'<span class="timer-container" data-timer="30">30</span>',
+					onshow: function(){
+						//页面定时停止
+						pageTimer.stop();
+						//提示弹窗定时开始
+						timeBs = new Timer(".timer-container", function(){
+						  dialog({id: 'book-tip-info'}).close().remove();
+						});
+					},
+					onclose:function(){
+						//弹窗定时停止
+				    	timeBs.stop();
+					},
+					okValue: '确定',
+				    ok: function () {
+				    	timeBs.stop();
+						books("/api.php/spaces/"+space+"/book",{
+				       		'access_token':ska.access_token,
+				       		'userid':ska.userid,
+				       		'segment':ska.segment,
+				       		'type':1
+				        },function(data){
+				        	 
+				        	dialog({'id':'book-tip-info'}).close().remove();
+                            
+				        	//called when successful
+						    if (data.status == 1) {
+						    	//console.log(data);
+						    	var bookInfo = data.data.list;
+
+						        var bookTipInfo = '';
+								bookTipInfo += '<div class="bookTipInfo">';
+                                //bookTipInfo += '<p class="book-usersname">当前状态：'+bookInfo.statusName+'</p>';
+                                bookTipInfo += '<p class="book-usersname">当前状态：预约成功</p>';
+								bookTipInfo += '<p class="book-usersname">预约用户：'+ska.username+'</p>';
+								bookTipInfo += '<p class="book-usersid">预约卡号：'+bookInfo.booker+'</p>';
+                                bookTipInfo += '<p class="book-times">预约时间：'+bookInfo.starttime+' ~ '+bookInfo.endingtime+'</p>';
+                                if(""=="en"){
+                                    bookTipInfo += '<p class="book-spaces">预约座位：'+bookInfo.spaceInfo.areaInfo.enname+' - '+bookInfo.spaceInfo.no+','+libraryname+' - '+currentfloor+'</p>';
+                                }else{
+                                    bookTipInfo += '<p class="book-spaces">预约座位：'+libraryname+' - '+currentfloor+' - '+bookInfo.spaceInfo.areaInfo.name+' - '+bookInfo.spaceInfo.no+' 号座位</p>';
+                                }
+								bookTipInfo += '</div>';
+						        dialog({
+									'id':'book-success-info',
+									'skin':'green-dialog',
+									'padding':'40px',
+									'title':'预约详情',
+                                    quickClose: true,
+									'content':bookTipInfo,
+									'statusbar':'<span class="timer-container" data-timer="30">30</span>',
+									onshow:function(){
+
+										timeBs = new Timer(".timer-container", function(){
+											dialog({id: 'book-success-info'}).close().remove(); 
+										    load_seat(window.ska.area,window.ska.segment,window.ska.day,window.ska.startTime,window.ska.endTime);
+										    //window.location.href = "/touch/index";
+										});
+								    },
+								    onclose:function(){
+								    	pageTimerFun();
+									    timeBs.stop();
+								    },
+									okValue: '确定',
+								    ok: function () {
+								       
+								       //重载座位页面
+								       load_seat(window.ska.area,window.ska.segment,window.ska.day,window.ska.startTime,window.ska.endTime);
+								       //window.location.href = "/touch/index";
+								    },
+								    cancel: false
+								}).showModal();	
+						    }else{
+						    	
+								if(data.msg=='没有登录或登录已超时'){
+									login();
+						    		
+									//window.location.href = "/CAS/docs/examples/cas_simple_login.php";
+								}else{
+						    		alertDialog(data.msg,'error');
+						    	}
+						    	//pageTimerFun();//页面时间重新定时
+						    	 
+						    }
+				        });
+				    },
+				    cancelValue: '取消',
+				    cancel: function () { 
+				    	pageTimerFun();//页面时间重新定时
+				    }
+				}).showModal();	
+			});
+    });
+    
+    //动态载入座位信息
+		function load_seat(area,segment,day,startTime,endTime){
+		   if(Date.parse(getNowTime()) > Date.parse(ska.queryDateTime)){
+				ska.day = day = currentDay();
+				//ska.startTime = startTime = "13:09";
+                ska.startTime = startTime = '';
+			}
+
+			window.ska.area = area;  //设置当前区域id
+			window.ska.segment = segment; //设置当前时间段id
+
+			jQuery.ajax({
+			  url: '/api.php/spaces_old',
+			  type: 'GET',
+			  dataType: 'JSON',
+			  data: { 
+			  	'area': area, 
+			  	'segment': segment,
+			  	'day': day,
+			  	'startTime': startTime,
+			  	'endTime': endTime,
+			  },
+			  beforeSend: function(){
+					  loadingDialog();
+			  },
+			  complete: function(xhr, textStatus) {
+			     //called when complete
+				 loadingDialogClose();
+			  },
+			  success: function(data, textStatus, xhr) {
+			    //called when successful
+			    //console.log(data);
+
+				if(data.status == 1){
+					var seatList = data.data.list;
+					var str = '';
+					//console.log(seatList);
+					$.each(seatList,function(index, seat) {
+                        str += '<li class="seat '+getSpaceStatusClass(seat.status)+'" style="background-size:'+Math.round(1366*size)+'px;background-position:-'+Math.round(seat.point_x*1366/100*size)+'px -'+Math.round(seat.point_y*768/100*size)+'px;left:'+Math.round(seat.point_x*1366/100*size)+'px;top:'+Math.round(seat.point_y*768/100*size)+'px;width:'+Math.round(seat.width*1366/100*size)+'px;height:'+Math.round(seat.height*768/100*size)+'px;"  data-no="'+seat.id+'" data-data=\''+JSON.stringify(seat)+'\'></li>'; 
+					});
+					//底部控制
+				    foot_set();
+                    $(".floor-area ul").html(str);
+                    
+                    //判定图片是否存在不存在则调用默认图片  strangesheep 2020年6月17日23:26:05
+                    var imgsrc = "/Public/home/images/web/area/40/seat-close.jpg";
+					var img = new Image();
+					img.src = imgsrc;
+					img.onload = function(){
+						if( img.width > 0 || img.height > 0  ){
+						}else {
+							$(".close-icon").css("background-image","url(/Public/home/images/web/area/40/seat-use.jpg)");
+						}
+					}
+
+
+					//显示显示当前时间
+					//jQuery.getJSON("/api.php/space_time_buckets/"+segment, {}, function(json, textStatus) {
+					  //optional stuff to do after success
+					  //console.log(json);
+					  if (ska.day && ska.startTime && ska.endTime) {
+					  	$(".current-book-time").html('预约时间：'+ska.day+' '+ska.startTime+' - '+ska.endTime);
+					  }else{
+					  	ska.segment = 0;
+						$(".current-book-time").html('<font color="red">请选择预约时间</font>');
+					  }
+					//});
+				}else{
+					alertDialog('该区域无可预约空间预约','error');
+				}
+			    pageTimerFun();//页面定时器初始化
+                //底部设定
+			    //foot_set();
+			  },
+			  error: function(xhr, textStatus, errorThrown) {
+			    //called when there is an error
+			    alertDialog('网络错误，请重试','error');
+			    //window.location.reload();
+			  }
+			});
+		}
+
+ 
+ 		//页面定时器初始化
+		function pageTimerFun(){
+			if (pageTimer instanceof Object) {
+				pageTimer.stop();
+			}
+			//座位载入完成页面计时器开始
+			pageTimer = new Timer(".page-timer", function(){
+			  window.location.href = "/home/web/f_second";
+			  //window.location.reload();
+			}); 
+		}
+		//登录
+		function login(callback){
+            //0:汇文系统验证, 1:直接数据库验证,2:url验证,3:指定数据库直接验证,4:单点登录
+            if(5==4){
+                window.location.href="/cas/index.php?callback="+window.location.href;
+                return;
+                //$('.login_click').attr("href","/cas/index.php");
+                //$('.login_click').removeClass("login-btn");
+            }
+			$(".login-control").show();
+			$(".logout-control").hide();
+			loginDialog(ska.loginApi,ska.checkUrl,function(data){
+			 	if (data.status == 1) { 
+			 		pageTimerFun();
+			    	//设置access_token
+			    	//设置userid 
+			    	 window.ska.access_token =  data.data._hash_.access_token;
+			    	 window.ska.userid =  data.data._hash_.userid;
+			    	 window.ska.username =  data.data.list.name;
+			    	 //显示登陆成功信息
+			    	 $(".login-control").hide();
+			    	 $(".logout-control").show();
+			    	 //$(".login-welcome").html('我的中心');
+			    	 dialog({'id':'login-dialog'}).remove();
+			    	 if(data.data.list.renege == 1){
+						alertDialog('登录成功!','success',10);
+						//alert(data.data.list.renegemsg);
+					 }else{
+			    		alertDialog('登录成功!','success');
+			    	 	bookRule(ska.bookRule);
+			    	 }
+			    	 if (callback instanceof Function) {
+						
+			    	 	callback(data);
+			    	 }
+			    }else{
+					 var captcha_img = $('#checkpic');
+					 var verifyimg = captcha_img.attr("src");
+					 if( verifyimg.indexOf('?')>0){
+						$('#checkpic').attr("src", verifyimg+'&random='+Math.random());
+					 }else{
+						$('#checkpic').attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
+					 }
+					 if(data.status == 2){
+					 	$(".renege").show();
+					 }
+			    	 alertDialog(data.msg,'error',1,10000);
+					  
+			    }
+			 });
+		}
+		 //登出
+		function logout(){
+			logoutDialog(ska.logoutApi,{
+			  	'access_token': window.ska.access_token,
+			  	'userid': window.ska.userid
+			  },function(data){
+				if (data.status == 1) {
+			    	//console.log(data);
+			    	//设置access_token
+			    	//设置userid 
+			    	 window.ska.access_token =  '';
+			    	 window.ska.userid = '';
+			    	 //显示登陆成功信息
+			    	 $(".login-control").show();
+			    	 $(".logout-control").hide();
+			    	 alertDialog('退出成功，欢迎使用！','success');
+                    //如果选择CAS认证则退出时CAS端也一并退出
+                     if(5 == 4)
+					    window.location="/cas/index.php?logout="+window.location.href;
+			    }else{
+			    	 alertDialog(data.msg,'error');
+			    }
+			  });
+		}
+
+    //固定顶部操作
+    jQuery(function ($) {
+        $(document).ready(function () {
+             $('.phone_menu').stickUp();
+        });
+    });
+</script><script>mendeleyWebImporter = { open: function () { window.postMessage('0.919676302953722', 'http://seats.lib.ecnu.edu.cn') } }</script></body></html>
