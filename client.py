@@ -3,7 +3,7 @@ from pyquery import PyQuery as pq
 
 
 class Client(object):
-    index = "seats.lib.ecnu.edu.cn/web/seat3?area=40&segment=1403094"
+    index = "seats.lib.ecnu.edu.cn/web/seat3"
     
 
     def __init__(self):
@@ -11,15 +11,17 @@ class Client(object):
         self.date = "2020-12-22"
         self.startTime = "13:00"
         self.endTime = "22:00"
-        self.url = self._concate()
+        self.url = self._concate(self.index)
         print(self.url)
 
 
-    def _concate(self):
-        return "http://" + self.index + \
-            "&=" + self.date + \
-            "&=" + self.startTime + \
-            "&=" + self.endTime
+    def _concate(self, prefix):
+       return "http://" + prefix + \
+            "?area=" + "40" + \
+            "&segment=" + "1403094" \
+            "&day=" + self.date + \
+            "&startTime=" + self.startTime + \
+            "&endTime=" + self.endTime
 
         # http://seats.lib.ecnu.edu.cn/web/seat3?area=40&segment=1403094&day=2020-12-23&startTime=11:57&endTime=22:00
         # http://seats.lib.ecnu.edu.cn/web/seat3?area=40&segment=1403094&day=2020-12-23&startTime=12:54&endTime=22:00
@@ -36,6 +38,22 @@ class Client(object):
             return r.text
         return None
     
+    def load_seat(self):
+        self.date = time.strftime("%Y-%m-%d", time.localtime())
+        self.startTime = time.strftime("%H:%M", time.localtime())
+        data = {
+            'area': '40', 
+            'segment': '1403094',
+            'day': '2020-12-23',
+            'startTime': '18:00',
+            'endTime': '22:00',
+        }
+        prefix = "seats.lib.ecnu.edu.cn/api.php/spaces_old"
+        url = self._concate(prefix)
+        # url = self.url + "/api.php/spaces_old"
+        school_datas = requests.get(url)
+        return school_datas
+    
     def get_seats(self):
         html = self.get_html()
         doc = pq(html)
@@ -43,7 +61,8 @@ class Client(object):
         
 
         return 0
-
-    
-c = Client()
-c.get_seats()
+   
+if __name__ == "__main__":
+    c = Client()
+    c.load_seat()
+    c.get_seats()
