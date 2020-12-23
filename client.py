@@ -1,57 +1,48 @@
 import requests, json, time
 from pyquery import PyQuery as pq
-
+from urllib.parse import urlencode
+from ua import USER_AGENT_LIST
+import random
 
 class Client(object):
-    index = "seats.lib.ecnu.edu.cn/web/seat3"
-    
+    index = "http://seats.lib.ecnu.edu.cn"
 
     def __init__(self):
         super().__init__()
-        self.date = "2020-12-22"
-        self.startTime = "13:00"
-        self.endTime = "22:00"
-        self.url = self._concate(self.index)
-        print(self.url)
-
-
-    def _concate(self, prefix):
-       return "http://" + prefix + \
-            "?area=" + "40" + \
-            "&segment=" + "1403094" \
-            "&day=" + self.date + \
-            "&startTime=" + self.startTime + \
-            "&endTime=" + self.endTime
-
-        # http://seats.lib.ecnu.edu.cn/web/seat3?area=40&segment=1403094&day=2020-12-23&startTime=11:57&endTime=22:00
-        # http://seats.lib.ecnu.edu.cn/web/seat3?area=40&segment=1403094&day=2020-12-23&startTime=12:54&endTime=22:00
-        # http://seats.lib.ecnu.edu.cn/web/seat3?area=8&segment=1377791&day=2020-12-23&startTime=12:55&endTime=21:55
-    
-    def get_html(self):
-        self.date = time.strftime("%Y-%m-%d", time.localtime())
-        self.startTime = time.strftime("%H:%M", time.localtime())
-        self.url = self._concate() 
-        # + "api.php/spaces_old"
-        print(self.url)
-        r = requests.get(self.url)
-        if r.ok:
-            return r.text
-        return None
-    
-    def load_seat(self):
-        self.date = time.strftime("%Y-%m-%d", time.localtime())
-        self.startTime = time.strftime("%H:%M", time.localtime())
-        data = {
+        self.data = {
             'area': '40', 
             'segment': '1403094',
             'day': '2020-12-23',
             'startTime': '18:00',
             'endTime': '22:00',
         }
-        prefix = "seats.lib.ecnu.edu.cn/api.php/spaces_old"
-        url = self._concate(prefix)
-        # url = self.url + "/api.php/spaces_old"
-        school_datas = requests.get(url)
+        self.url = self.index + '/web/seat3'
+
+    def _concate(self, prefix, data):
+       return prefix + '?' + urlencode(data)
+
+        # http://seats.lib.ecnu.edu.cn/web/seat3?area=40&segment=1403094&day=2020-12-23&startTime=11:57&endTime=22:00
+        # http://seats.lib.ecnu.edu.cn/web/seat3?area=40&segment=1403094&day=2020-12-23&startTime=12:54&endTime=22:00
+        # http://seats.lib.ecnu.edu.cn/web/seat3?area=8&segment=1377791&day=2020-12-23&startTime=12:55&endTime=21:55
+    
+    def get_html(self):
+        self.data['day'] = time.strftime("%Y-%m-%d", time.localtime())
+        self.data['startTime'] = time.strftime("%H:%M", time.localtime())
+        url = self._concate(self.url, self.data)
+        r = requests.get(url)
+        if r.ok:
+            return r.text
+        return None
+    
+    def load_seat(self):
+        self.data['day'] = time.strftime("%Y-%m-%d", time.localtime())
+        self.data['startTime'] = time.strftime("%H:%M", time.localtime())
+        prefix = self.index + "/api.php/spaces_old"
+        USER_AGENT = random.choice(USER_AGENT_LIST)
+        headers = {'user-agent': USER_AGENT}
+        url = self._concate(prefix, self.data)
+        school_datas = requests.get(url, headers=headers)
+        print(school_datas.content.decode('unicode_escape'))
         return school_datas
     
     def get_seats(self):
