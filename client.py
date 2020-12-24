@@ -1,59 +1,67 @@
-import requests, json, time
-from pyquery import PyQuery as pq
-from urllib.parse import urlencode
+import requests, json, time, random
+import logging
 from ua import USER_AGENT_LIST
-import random
+
+logging.basicConfig(level=logging.WARNING)
 
 class Client(object):
     index = "http://seats.lib.ecnu.edu.cn"
+    data = {
+                'area': '40', 
+                'segment': '1403094',
+                'day': '2020-12-23',
+                'startTime': '18:00',
+                'endTime': '22:00',
+            }
+    headers = {
+            'Host': 'seats.lib.ecnu.edu.cn',
+            'Accept-Language': 'zh,zh-CN;q=0.9',
+            'Referer': index,
+            'X-Requested-With': 'XMLHttpRequest',
+            'Accept': 'application/json, text/javascript, */*; q=0.01',
+        }
 
     def __init__(self):
         super().__init__()
-        self.data = {
-            'area': '40', 
-            'segment': '1403094',
-            'day': '2020-12-23',
-            'startTime': '18:00',
-            'endTime': '22:00',
-        }
-        self.url = self.index + '/web/seat3'
+        self.seat3 = self.index + '/web/seat3'
 
-    def _concate(self, prefix, data):
-       return prefix + '?' + urlencode(data)
-
-        # http://seats.lib.ecnu.edu.cn/web/seat3?area=40&segment=1403094&day=2020-12-23&startTime=11:57&endTime=22:00
-        # http://seats.lib.ecnu.edu.cn/web/seat3?area=40&segment=1403094&day=2020-12-23&startTime=12:54&endTime=22:00
-        # http://seats.lib.ecnu.edu.cn/web/seat3?area=8&segment=1377791&day=2020-12-23&startTime=12:55&endTime=21:55
-    
-    def get_html(self):
-        self.data['day'] = time.strftime("%Y-%m-%d", time.localtime())
-        self.data['startTime'] = time.strftime("%H:%M", time.localtime())
-        url = self._concate(self.url, self.data)
-        r = requests.get(url)
-        if r.ok:
-            return r.text
-        return None
-    
     def load_seat(self):
+        print("loading seat at ", time.strftime("%H:%M:%S", time.localtime()))
+
         self.data['day'] = time.strftime("%Y-%m-%d", time.localtime())
         self.data['startTime'] = time.strftime("%H:%M", time.localtime())
-        prefix = self.index + "/api.php/spaces_old"
-        USER_AGENT = random.choice(USER_AGENT_LIST)
-        headers = {'user-agent': USER_AGENT}
-        url = self._concate(prefix, self.data)
-        school_datas = requests.get(url, headers=headers)
-        print(school_datas.content.decode('unicode_escape'))
-        return school_datas
-    
-    def get_seats(self):
-        html = self.get_html()
-        doc = pq(html)
-        lis = doc('li')
-        
+        self.headers['user-agent'] = random.choice(USER_AGENT_LIST)
 
-        return 0
+        prefix = self.index + "/api.php/spaces_old"
+        school_datas = requests.get(prefix, headers=self.headers, params=self.data)
+        if school_datas.status_code == 200:
+            seats_data = school_datas.content.decode('unicode_escape')
+            logging.debug(seats_data)
+        else:
+            logging.error("load seat error code : ", school_datas.status_code)
+            return None
+        seats_data = json.loads(seats_data)
+        if seats_data['status'] == 1:
+            return seats_data['data']['list']
+        else:
+            logging.info("there is no space to order")
+            return None
+    
+    def choose_empty(self, seats):
+        empty = []
+        used = [2, 6, 7]
+        for x in seats: 
+            status = x['status']
+            if status not in used:
+                empty.append((x['name'], x['status_name'], x['area_name'], x['status']))
+        return empty
+    
    
 if __name__ == "__main__":
     c = Client()
-    c.load_seat()
-    c.get_seats()
+    empty_seats = []
+    while len(empty_seats) == 0:
+        seats = c.load_seat()
+        empty_seats = c.choose_empty(seats)
+        if len(empty_seats) == 0 : time.sleep(10)
+    print(empty_seats)
