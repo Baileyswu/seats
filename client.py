@@ -2,7 +2,8 @@ import requests, json, time, random
 import logging
 from ua import USER_AGENT_LIST
 
-logging.basicConfig(level=logging.INFO)
+def init_log():
+    logging.basicConfig(level=logging.INFO)
 
 class Client(object):
     index = "http://seats.lib.ecnu.edu.cn"
@@ -30,14 +31,23 @@ class Client(object):
         self.data['startTime'] = time.strftime("%H:%M", time.localtime())
 
     def load_area(self):
-        with open('data/segment.json', 'r') as f: 
+        with open('./data/segment.json', 'r') as f: 
             area = json.load(f)
-        return area
+        print("choose area:")
+        idx = 1
+        for x in area['obj']:
+            print(idx, x['areaname'])
+            idx += 1
+        val = input('input index of area (1-7) :')
+        val = int(val)
+        return area['obj'][val-1]
 
-    def load_seat(self):
+    def load_seat(self, area):
         print("loading seat at", time.strftime("%H:%M:%S", time.localtime()))
         self._update_time()
         
+        self.data['area'] = area['area']
+        self.data['segment'] = area['segment']
         self.headers['user-agent'] = random.choice(USER_AGENT_LIST)
 
         prefix = self.index + "/api.php/spaces_old"
@@ -53,7 +63,7 @@ class Client(object):
         if seats_data['status'] == 1:
             return seats_data['data']['list']
         else:
-            logging.info("there is no space to order")
+            logging.warning("there is no space to order")
             return None
     
     def choose_empty(self, seats):
@@ -65,15 +75,21 @@ class Client(object):
             if status not in used:
                 empty.append((x['name'], x['status_name'], x['area_name']))
                 logging.debug(x['name'], x['status_name'], x['area_name'], x['status'])
+        if len(empty) == 0:
+            logging.info("there is no space to order")
         return empty
     
    
 if __name__ == "__main__":
+    init_log()
     c = Client()
     empty_seats = []
-    c.load_area()
+    area = c.load_area()
+    
     while len(empty_seats) == 0:
-        seats = c.load_seat()
+        seats = c.load_seat(area)
         empty_seats = c.choose_empty(seats)
         if len(empty_seats) == 0 : time.sleep(15)
-    print(empty_seats)
+
+    for x in empty_seats:
+        print(x)
