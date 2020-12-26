@@ -3,7 +3,8 @@ import logging
 from ua import USER_AGENT_LIST
 
 def init_log():
-    logging.basicConfig(level=logging.INFO)
+    formatter = '[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s'
+    logging.basicConfig(level=logging.WARN, format=formatter)
 
 class Client(object):
     index = "http://seats.lib.ecnu.edu.cn"
@@ -38,7 +39,7 @@ class Client(object):
         for x in area['obj']:
             print(idx, x['areaname'])
             idx += 1
-        val = input('input index of area (1-7) :')
+        val = input('input index of area (1-7) : ')
         val = int(val)
         return area['obj'][val-1]
 
@@ -57,7 +58,7 @@ class Client(object):
             seats_data = school_data.content.decode('unicode_escape')
             logging.debug(seats_data)
         else:
-            logging.error("load seat error code : ", school_data.status_code)
+            logging.error("load seat error code : ", str(school_data.status_code))
             return None
         seats_data = json.loads(seats_data)
         if seats_data['status'] == 1:
@@ -69,13 +70,13 @@ class Client(object):
     def choose_empty(self, seats):
         if seats == None: return []
         empty = []
-        used = [2, 6, 7]
+        used = [2, 3, 6, 7]
         for x in seats: 
             status = x['status']
             if status not in used:
                 empty.append((x['name'], x['status_name'], x['area_name']))
-                logging.debug(x['name'], x['status_name'], x['area_name'], x['status'])
-        if len(empty) == 0:
+                logging.info(str(x['status']))
+        if len(empty) == 0 :
             logging.info("there is no space to order")
         return empty
     
@@ -89,7 +90,7 @@ if __name__ == "__main__":
     while len(empty_seats) == 0:
         seats = c.load_seat(area)
         empty_seats = c.choose_empty(seats)
-        if len(empty_seats) == 0 : time.sleep(15)
+        if len(empty_seats) == 0 : time.sleep(10)
 
     for x in empty_seats:
         print(x)
