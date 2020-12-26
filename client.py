@@ -2,7 +2,7 @@ import requests, json, time, random
 import logging
 from ua import USER_AGENT_LIST
 
-logging.basicConfig(level=logging.WARNING)
+logging.basicConfig(level=logging.INFO)
 
 class Client(object):
     index = "http://seats.lib.ecnu.edu.cn"
@@ -33,6 +33,7 @@ class Client(object):
         self.headers['user-agent'] = random.choice(USER_AGENT_LIST)
 
         prefix = self.index + "/api.php/spaces_old"
+        logging.info("request GET from " + prefix)
         school_datas = requests.get(prefix, headers=self.headers, params=self.data)
         if school_datas.status_code == 200:
             seats_data = school_datas.content.decode('unicode_escape')
@@ -63,5 +64,5 @@ if __name__ == "__main__":
     while len(empty_seats) == 0:
         seats = c.load_seat()
         empty_seats = c.choose_empty(seats)
-        if len(empty_seats) == 0 : time.sleep(10)
+        if len(empty_seats) == 0 : time.sleep(15)
     print(empty_seats)
