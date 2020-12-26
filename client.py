@@ -24,21 +24,29 @@ class Client(object):
     def __init__(self):
         super().__init__()
         self.seat3 = self.index + '/web/seat3'
-
-    def load_seat(self):
-        print("loading seat at ", time.strftime("%H:%M:%S", time.localtime()))
-
+    
+    def _update_time(self):
         self.data['day'] = time.strftime("%Y-%m-%d", time.localtime())
         self.data['startTime'] = time.strftime("%H:%M", time.localtime())
+
+    def load_area(self):
+        with open('data/segment.json', 'r') as f: 
+            area = json.load(f)
+        return area
+
+    def load_seat(self):
+        print("loading seat at", time.strftime("%H:%M:%S", time.localtime()))
+        self._update_time()
+        
         self.headers['user-agent'] = random.choice(USER_AGENT_LIST)
 
         prefix = self.index + "/api.php/spaces_old"
-        school_datas = requests.get(prefix, headers=self.headers, params=self.data)
-        if school_datas.status_code == 200:
-            seats_data = school_datas.content.decode('unicode_escape')
+        school_data = requests.get(prefix, headers=self.headers, params=self.data)
+        if school_data.status_code == 200:
+            seats_data = school_data.content.decode('unicode_escape')
             logging.debug(seats_data)
         else:
-            logging.error("load seat error code : ", school_datas.status_code)
+            logging.error("load seat error code : ", school_data.status_code)
             return None
         seats_data = json.loads(seats_data)
         if seats_data['status'] == 1:
@@ -48,18 +56,21 @@ class Client(object):
             return None
     
     def choose_empty(self, seats):
+        if seats == None: return []
         empty = []
         used = [2, 6, 7]
         for x in seats: 
             status = x['status']
             if status not in used:
-                empty.append((x['name'], x['status_name'], x['area_name'], x['status']))
+                empty.append((x['name'], x['status_name'], x['area_name']))
+                logging.debug(x['name'], x['status_name'], x['area_name'], x['status'])
         return empty
     
    
 if __name__ == "__main__":
     c = Client()
     empty_seats = []
+    c.load_area()
     while len(empty_seats) == 0:
         seats = c.load_seat()
         empty_seats = c.choose_empty(seats)
