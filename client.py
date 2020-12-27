@@ -4,7 +4,7 @@ from ua import USER_AGENT_LIST
 
 def init_log():
     formatter = '[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s'
-    logging.basicConfig(level=logging.WARN, format=formatter)
+    logging.basicConfig(level=logging.WARNING, format=formatter)
 
 class Client(object):
     index = "http://seats.lib.ecnu.edu.cn"
@@ -39,8 +39,12 @@ class Client(object):
         for x in area['obj']:
             print(idx, x['areaname'])
             idx += 1
+        val = ''
         val = input('input index of area (1-7) : ')
-        val = int(val)
+        if val == '':
+            val = 2
+        else:
+            val = int(val)
         return area['obj'][val-1]
 
     def load_seat(self, area):
@@ -53,12 +57,19 @@ class Client(object):
 
         prefix = self.index + "/api.php/spaces_old"
         logging.info("request GET from " + prefix)
-        school_data = requests.get(prefix, headers=self.headers, params=self.data)
+        try:
+            school_data = requests.get(prefix, headers=self.headers, params=self.data)
+        except ConnectionError as e:
+            logging.error("check your connection")
+            return None
+        except Exception as e:
+            logging.error(e)
+            return None
         if school_data.status_code == 200:
             seats_data = school_data.content.decode('unicode_escape')
             logging.debug(seats_data)
         else:
-            logging.error("load seat error code : ", str(school_data.status_code))
+            logging.error("load seat error code : " + str(school_data.status_code))
             return None
         seats_data = json.loads(seats_data)
         if seats_data['status'] == 1:
